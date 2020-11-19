@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;"> 
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Pakem-E</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -12,7 +12,7 @@
         <a class="nav-link" href="produk">Detail</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="mahasiswa">About</a>
+        <a class="nav-link" href="about">About</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -21,7 +21,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="auth/admin">Admin</a>
           <a class="dropdown-item" href="auth/register">Register</a>
-          <a class="dropdown-item" href="mahasiswa">About</a>
+          <a class="dropdown-item" href="about">About</a>
         </div>
       </li>
     </ul>

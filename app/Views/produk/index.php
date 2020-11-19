@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to CodeIgniter 4!</title>
-    <h1>READ DATA</h1>
+    <h1>TOKO PAKEM</h1>
 
     <table border="1">
         <thead>

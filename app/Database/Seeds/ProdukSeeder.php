@@ -6,12 +6,12 @@ class ProdukSeeder extends \CodeIgniter\Database\Seeder
         {
                 $data = [
                     [
-                        'nama_produk' => 'baju',
-                        'deskripsi_produk'    => 'baju panjang'
+                        'nama_produk' => 'Sharp TV',
+                        'deskripsi_produk'    => 'Tv 21"'
                     ],
                     [
-                        'nama_produk' => 'celana',
-                        'deskripsi_produk'    => 'celana panjang'
+                        'nama_produk' => 'AC Panasonic',
+                        'deskripsi_produk'    => 'Panasonic AC 2pk'
                     ],
                 ];
 

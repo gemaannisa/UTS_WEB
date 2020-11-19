@@ -15,11 +15,6 @@ class ProdukSeeder extends \CodeIgniter\Database\Seeder
                     ],
                 ];
 
-                // Simple Queries
-                $this->db->query("INSERT INTO produk (nama_produk, deskripsi_produk) VALUES(:username:, :email:)",
-                        $data
-                );
-
                 // Using Query Builder
                 $this->db->table('produk')->insertBatch($data);
         }

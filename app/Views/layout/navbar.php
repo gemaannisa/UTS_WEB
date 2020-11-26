@@ -9,19 +9,17 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="produk">Detail</a>
+        <a class="nav-link" href="auth/product">Produk</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="about">About</a>
+        <a class="nav-link" href="auth/about">About</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Menu Lainnya
+          Admin
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="auth/admin">Admin</a>
-          <a class="dropdown-item" href="auth/register">Register</a>
-          <a class="dropdown-item" href="about">About</a>
+          <a class="dropdown-item" href="auth/admin">Login</a>
         </div>
       </li>
     </ul>

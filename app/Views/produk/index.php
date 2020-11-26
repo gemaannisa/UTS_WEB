@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Welcome to CodeIgniter 4!</title>
     <h1>TOKO PAKEM</h1>
+    <body>
 
     <table border="1">
         <thead>
@@ -17,10 +18,13 @@
                     <td><?php echo $keluar['nama_produk'];  ?></td>
                     <td><?php echo $keluar['deskripsi_produk'];  ?></td>
                 </tr>
-            <?php } ?>
+            <?php } 
+            
+            
+            ?>
         </tbody>
     </table>
     </section>
-    </body>
 
+    
 </html>

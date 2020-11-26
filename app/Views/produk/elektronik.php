@@ -1,12 +1,5 @@
-<?php echo $this->include('produk/header'); ?>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome to Toko Pakem</title>
-    <h1>TOKO PAKEM</h1>
-    <body>
-    
-    <div class="row">
+<?php echo $this->include('produk/desc/index'); ?>
+<div class="row">
     <table>
     <tr>
     <td>
@@ -18,11 +11,13 @@
             <img class="img-profile rounded-circle" src="/img/kulkas-samsung.jpg" width="200">
         </a>
         <p class="card-text">RT29 Kulkas 2 Pintu dengan All-around Cooling™ 300L</p>
-        <a href="detail/kulkas" class="btn btn-primary">More About this</a>
+        <a href="<?= base_url('/AdminController/samsung'); ?>" class="btn btn-primary">More About this</a>
       </div>
     </div>
   </div>
   </td>
+  </tr>
+  <tr>
   <td>
   <div class="col-sm-6">
     <div class="card">
@@ -48,11 +43,13 @@
             <img class="img-profile rounded-circle" src="/img/sharp-washer.png" width="153">
         </a>
         <p class="card-text">Cucian Anda lebih bersih dengan mesin cuci tabung tanpa lubang (Hole-less Tub) dari SHARP</p>
-        <a href="#" class="btn btn-primary">More About This</a>
+        <a href="/AdminController/sharp" class="btn btn-primary">More About This</a>
       </div>
     </div>
   </div>
   </td>
+  </tr>
+  <tr>
   <td>
   <div class="col-sm-6">
     <div class="card">
@@ -70,6 +67,3 @@
 </td>
 <tr>
 </table>
-    </body>
-</html>
-<?php echo $this->include('produk/footer'); ?>

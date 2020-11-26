@@ -1,4 +1,4 @@
-<?php echo $this->extend('layout/index'); ?>
+<?php echo $this->extend('auth/register/index'); ?>
 <?php echo $this->section('content'); ?>
 <div class="container">
     <div class="row">

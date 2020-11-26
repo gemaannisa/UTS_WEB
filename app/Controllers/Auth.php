@@ -12,11 +12,12 @@ class Auth extends BaseController
         $password= $this->request->getVar('password');
         if($email=="gemaannisa05@gmail.com"&&$password=="admin")
         {
-            return redirect()->to('/auth/product');
+            return redirect()->to('/AdminController/index');
         }else{
-            return redirect()->to('/auth');
+            return redirect()->to('/AdminController/product');
         }
     }
+    
     
     public function register(){
         return view('auth/register');
@@ -29,9 +30,7 @@ class Auth extends BaseController
         return view('about/index');
     }
 
-    public function product(){
-        return view('produk/elektronik');
-    }
+    
 
     public function detail()
 	{

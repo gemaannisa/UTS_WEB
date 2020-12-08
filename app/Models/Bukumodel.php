@@ -9,9 +9,9 @@ class Bukumodel extends Model{
     protected $allowedFields = ['nomor','nama','deskripsi','stok','penerbit'];
 
     public function search($keyword){
-        // $builder = $this->table('buku');
-        // $builder->like('nama', '$keyword');
-        // return $builder;
-        return $this->table('buku')->like('nama', '$keyword');
+        $builder = $this->table('buku');
+        $builder->like('nama', '$keyword');
+        return $builder;
+        // return $this->table('buku')->like('nama', '$keyword');
     }
 }

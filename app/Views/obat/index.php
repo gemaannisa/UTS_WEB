@@ -30,7 +30,7 @@
                 </tr>
             </thead>
         <tbody>
-            <?php $i =1; ?>
+            <?php $i = 1 + (5 * ($currentPage - 1)); ?>
             <?php foreach ($buku as $o):?>
                 <tr>
                 <th scope="row"><?= $i++;?></th>
@@ -48,7 +48,7 @@
         </tbody>
         </table>
         
-    
+        <?= $pager->links('data_pinjam', 'pinjam_pagination') ?>
     
         </div>
     </div>

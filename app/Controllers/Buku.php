@@ -11,7 +11,7 @@ class Buku extends BaseController
     }
 	public function index()
 	{
-        $curretPage = $this->request->getVar('page_buku') ? $this->request->getVar('page_buku') : 1;
+        $currentPage = $this->request->getVar('page_buku') ? $this->request->getVar('page_buku') : 1;
 
         $keyword = $this->request->getVar('keyword');
         if($keyword){
@@ -23,9 +23,9 @@ class Buku extends BaseController
         $buku =$this->bukuModel->findAll();
         $data=[
             'title'=>'Daftar Buku',
-            'buku' => $this->bukuModel->paginate(10, 'buku'),
+            'buku' => $this->bukuModel->paginate(5, 'buku'),
             'pager' => $this->bukuModel->pager,
-            'currentPage' => $curretPage
+            'currentPage' => $currentPage
         ];
        
                
@@ -98,15 +98,19 @@ class Buku extends BaseController
         echo view('layout/footer');
 
     }
+    
+
     public function update($id){
         $this->bukuModel->save([
 
-            'id'=>$this->request->getVar('id'),
+            'id'=> $id,
             'nomor'=>$this->request->getVar('nomor'),
             'nama'=>$this->request->getVar('nama'),
             'stok'=>$this->request->getVar('stok'),
             'penerbit'=>$this->request->getVar('penerbit'),
             'deskripsi'=>$this->request->getVar('deskripsi'),
         ]);
+
+        // dd($this->request->getVar());
     }
 }

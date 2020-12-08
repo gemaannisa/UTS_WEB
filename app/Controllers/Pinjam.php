@@ -46,7 +46,7 @@ class Pinjam extends BaseController
 
     
         if(!$this->validate([
-            'nama'=>'required|is_unique[buku.nama]',
+            'nama'=>'required|is_unique[data_pinjam.nama]',
             'judul'=>'required',
             'alamat'=>'required',
             'telepon'=>'required'
@@ -56,18 +56,18 @@ class Pinjam extends BaseController
             return redirect()->to('/pinjam/create')->withInput();
 
         }
-       $this->bukuModel->save([
+       $this->pinjamModel->save([
            'nama'=>$this->request->getVar('nama'),
-           'judul'=>$this->request->getVar('stok'),
-           'alamat'=>$this->request->getVar('penerbit'),
-           'telepon'=>$this->request->getVar('deskripsi'),
+           'judul'=>$this->request->getVar('judul'),
+           'alamat'=>$this->request->getVar('alamat'),
+           'telepon'=>$this->request->getVar('telepon'),
        ]);
        
        return redirect()->to('/pinjam');
 	}
 
     public function delete($id_pinjam)
-    {   $this->bukuModel->delete($id_pinjam);
+    {   $this->pinjamModel->delete($id_pinjam);
         return redirect()->to('/pinjam');
       
 
@@ -90,6 +90,7 @@ class Pinjam extends BaseController
         echo view('layout/footer');
 
     }
+
     public function update($id_pinjam){
         $this->pinjamModel->save([
 

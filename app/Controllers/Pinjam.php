@@ -11,18 +11,15 @@ class Pinjam extends BaseController
     }
 	public function index()
 	{
-        $curretPage = $this->request->getVar('page_pinjam') ? $this->request->getVar('page_pinjam') : 1;
-        //$data_pinjam = $this->pinjamModel->findAll();
+        $currentPage = $this->request->getVar('page_data_pinjam') ? $this->request->getVar('page_data_pinjam') : 1;
+        $data_pinjam = $this->pinjamModel->findAll();
         $data=[
             'title'=>'Daftar Peminjaman',
             'data_pinjam' => $this->pinjamModel->paginate(10, 'data_pinjam'),
             'pager' => $this->pinjamModel->pager,
-            'currentPage' => $curretPage
+            'currentPage' => $currentPage
             //'pinjam'=>$this->pinjamModel->findAll(),
         ];
-       
-               
-
 
         echo view('layout/header',$data);
         echo view('layout/navbar');
@@ -40,13 +37,14 @@ class Pinjam extends BaseController
         echo view('layout/header',$data);
         echo view('pinjam/create',$data);
         echo view('layout/footer');
-	}
+    }
+    
     public function save()
 	{   
 
     
         if(!$this->validate([
-            'nama'=>'required|is_unique[data_pinjam.nama]',
+            'nama'=>'required',
             'judul'=>'required',
             'alamat'=>'required',
             'telepon'=>'required'
@@ -66,21 +64,20 @@ class Pinjam extends BaseController
        return redirect()->to('/pinjam');
 	}
 
-    public function delete($id_pinjam)
-    {   $this->pinjamModel->delete($id_pinjam);
+    public function delete($id)
+    {   $this->pinjamModel->delete($id);
         return redirect()->to('/pinjam');
-      
-
     }
+    
 
-    public function edit($id_pinjam){
+    public function edit($id){
         session();
         $db = \Config\Database::connect();
-        $query = $db->query("SELECT * FROM data_pinjam WHERE id_pinjam='$id_pinjam'");
+        $query = $db->query("SELECT * FROM data_pinjam WHERE id='$id'");
         $data_pinjam = $query->getResultArray();
         $data=[
             'title'=>'Form Edit Peminjaman',
-            'id_pinjam'=>'$id_pinjam',
+            'id'=>'$id',
             'data_pinjam' => $data_pinjam
             
         ];
@@ -91,10 +88,10 @@ class Pinjam extends BaseController
 
     }
 
-    public function update($id_pinjam){
+    public function update($id){
         $this->pinjamModel->save([
 
-            'id_pinjam'=>$this->request->getVar('id_pinjam'),
+            'id'=> $id,
             'nama'=>$this->request->getVar('nama'),
             'judul'=>$this->request->getVar('judul'),
             'alamat'=>$this->request->getVar('alamat'),
@@ -102,4 +99,5 @@ class Pinjam extends BaseController
         ]);
         return redirect()->to('/pinjam');
     }
+
 }

@@ -23,14 +23,11 @@ class Buku extends BaseController
         $buku =$this->bukuModel->findAll();
         $data=[
             'title'=>'Daftar Buku',
-            'buku' => $this->bukuModel->paginate(5, 'buku'),
+            'buku' => $this->bukuModel->paginate(10, 'buku'),
             'pager' => $this->bukuModel->pager,
             'currentPage' => $currentPage
         ];
        
-               
-
-
         echo view('layout/header',$data);
         echo view('layout/navbar');
         echo view('obat/index',$data);
@@ -47,7 +44,8 @@ class Buku extends BaseController
         echo view('layout/header',$data);
         echo view('obat/create',$data);
         echo view('layout/footer');
-	}
+    }
+    
     public function save()
 	{   
 
@@ -110,6 +108,8 @@ class Buku extends BaseController
             'penerbit'=>$this->request->getVar('penerbit'),
             'deskripsi'=>$this->request->getVar('deskripsi'),
         ]);
+
+        return redirect()->to('/buku');
 
         // dd($this->request->getVar());
     }

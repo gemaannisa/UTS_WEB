@@ -18,15 +18,15 @@
             </thead>
         <tbody>
             <?php $i = 1 + (10 * ($currentPage - 1)); ?>
-            <?php foreach ($data_pinjam as $pinjam):?>
+            <?php foreach ($data_pinjam as $data_pinjam):?>
                 <tr>
                 <th scope="row"><?= $i++;?></th>
-                <td><?= $pinjam['nama']; ?></td>
-                <td><?= $pinjam['judul']; ?></td>
-                <td><?= $pinjam['alamat']; ?></td>
-                <td><?= $pinjam['telepon']; ?></td>
-                <td><a class="btn btn-outline-dark" href="/pinjam/edit/<?=$pinjam['id_pinjam'];?>">Update</a></td>
-                <td><a class="btn btn-outline-dark" href="/pinjam/delete/<?=$pinjam['id_pinjam'];?>">Delete</a></td>
+                <td><?= $data_pinjam['nama']; ?></td>
+                <td><?= $data_pinjam['judul']; ?></td>
+                <td><?= $data_pinjam['alamat']; ?></td>
+                <td><?= $data_pinjam['telepon']; ?></td>
+                <td><a class="btn btn-outline-dark" href="/pinjam/edit/<?=$data_pinjam['id'];?>">Update</a></td>
+                <td><a class="btn btn-outline-dark" href="/pinjam/delete/<?=$data_pinjam['id'];?>">Delete</a></td>
                 
     
             </tr>
